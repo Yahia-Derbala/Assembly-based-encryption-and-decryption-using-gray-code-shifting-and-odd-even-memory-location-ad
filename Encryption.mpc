@@ -1,0 +1,212 @@
+8000
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\li195\cf1\f0\fs20 
+\par 
+\par MVI C 0Ah
+\par LXI H 1000h
+\par LXI D 2000h
+\par LOOP: MOV A M
+\par RAR
+\par XRA M
+\par STAX D
+\par INX H
+\par INX D
+\par DCR C
+\par JNZ LOOP
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par MVI C 0Ah
+\par LXI H 2000h
+\par LXI D 3000h
+\par BACK: MOV A L
+\par ANI 01h
+\par JZ EVEN
+\par MOV A M
+\par ADI 05h
+\par STAX D
+\par JMP NEXT
+\par 
+\par EVEN: MOV A M
+\par ADI 02h
+\par STAX D
+\par 
+\par NEXT: INX H
+\par INX D
+\par DCR C
+\par JNZ BACK
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par MVI C 0Ah
+\par LXI H 3000h
+\par LXI D 4000h
+\par 
+\par MOVE: MOV A M
+\par STAX D
+\par INX H
+\par INX D
+\par DCR C
+\par JNZ MOVE
+\par 
+\par MVI C 09h
+\par LXI H 4000h
+\par SHFT_UP: MOV A M
+\par INX H
+\par MOV B M
+\par MOV M A
+\par DCX H
+\par MOV M B
+\par INX H
+\par DCR C
+\par JNZ SHFT_UP
+\par 
+\par HLT\cf0 
+\par }
+<End Codes>
+48
+1| 1000| 00
+2| 1001| 01
+3| 1002| 02
+4| 1003| 03
+5| 1004| 04
+6| 1005| 05
+7| 1006| 06
+8| 1007| 07
+9| 1008| 08
+10| 1009| 09
+12| 2000| 00
+13| 2001| 01
+14| 2002| 03
+15| 2003| 02
+16| 2004| 06
+17| 2005| 07
+18| 2006| 05
+19| 2007| 04
+20| 2008| 0C
+21| 2009| 0D
+23| 3000| 02
+24| 3001| 06
+25| 3002| 05
+26| 3003| 07
+27| 3004| 08
+28| 3005| 0C
+29| 3006| 07
+30| 3007| 09
+31| 3008| 0E
+32| 3009| 12
+34| 4000| 06
+35| 4001| 05
+36| 4002| 07
+37| 4003| 08
+38| 4004| 0C
+39| 4005| 07
+40| 4006| 09
+41| 4007| 0E
+42| 4008| 12
+43| 4009| 02
+<End UserData>
+3145
+1| 8000| 0E
+2| 8001| 0A
+3| 8002| 21
+4| 8003| 00
+5| 8004| 10
+6| 8005| 11
+7| 8006| 00
+8| 8007| 20
+9| 8008| 7E
+10| 8009| 1F
+11| 800A| AE
+12| 800B| 12
+13| 800C| 23
+14| 800D| 13
+15| 800E| 0D
+16| 800F| C2
+17| 8010| 08
+18| 8011| 80
+19| 8012| 0E
+20| 8013| 0A
+21| 8014| 21
+22| 8015| 00
+23| 8016| 20
+24| 8017| 11
+25| 8018| 00
+26| 8019| 30
+27| 801A| 7D
+28| 801B| E6
+29| 801C| 01
+30| 801D| CA
+31| 801E| 27
+32| 801F| 80
+33| 8020| 7E
+34| 8021| C6
+35| 8022| 05
+36| 8023| 12
+37| 8024| C3
+38| 8025| 2B
+39| 8026| 80
+40| 8027| 7E
+41| 8028| C6
+42| 8029| 02
+43| 802A| 12
+44| 802B| 23
+45| 802C| 13
+46| 802D| 0D
+47| 802E| C2
+48| 802F| 1A
+49| 8030| 80
+50| 8031| 0E
+51| 8032| 0A
+52| 8033| 21
+53| 8034| 00
+54| 8035| 30
+55| 8036| 11
+56| 8037| 00
+57| 8038| 40
+58| 8039| 7E
+59| 803A| 12
+60| 803B| 23
+61| 803C| 13
+62| 803D| 0D
+63| 803E| C2
+64| 803F| 39
+65| 8040| 80
+66| 8041| 0E
+67| 8042| 09
+68| 8043| 21
+69| 8044| 00
+70| 8045| 40
+71| 8046| 7E
+72| 8047| 23
+73| 8048| 46
+74| 8049| 77
+75| 804A| 2B
+76| 804B| 70
+77| 804C| 23
+78| 804D| 0D
+79| 804E| C2
+80| 804F| 46
+81| 8050| 80
+82| 8051| 76
+<End HexData>
+
+1)Conversion to Gray Code
+2) Add 5 to ODD MEM LOC & ADD 2 to EVEN MEM LOC
+3)Shift up one index
+
+
+
+
+<End Comment>
